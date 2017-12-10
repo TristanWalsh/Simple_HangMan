@@ -35,11 +35,20 @@ public class Game {
 			printWord();
 			printMan();
 			
-			if (word.equalsIgnoreCase(dispWord.toString())) {
+			if (word.equalsIgnoreCase(dispWord.toString()) || wordComplete()) {
 				gameWon = true;
 				return;
 			}
 		}
+	}
+	
+	public boolean wordComplete(){
+	    for (int i = 0; i < word.length(); i++) {
+	        if (alreadyGuessed.toString().toLowerCase().indexOf(word.toLowerCase().charAt(i)) == -1) {
+	            return false;
+	        }
+	    }
+	    return true;
 	}
 	
 	public void createWordMask(String word) {
