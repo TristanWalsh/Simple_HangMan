@@ -1,1 +1,1 @@
-# sandbox
+# Simple Hangman game implemented with Java
